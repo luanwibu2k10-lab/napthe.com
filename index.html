@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game Shop Mockup</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div class="brand-wrap">
+        <div class="brand-logo">G</div>
+        <div class="brand-name">Game Shop</div>
+      </div>
+      <div class="topbar-title">Trung tâm nạp thẻ chính thức</div>
+      <div class="user-icon">◔</div>
+    </header>
+
+    <main class="content">
+      <section class="promo-panel">
+        <div class="promo-card">
+          <div class="promo-left">
+            <div class="pay-brand">
+              <span class="pay-box">S</span>
+              <span>Pay</span>
+            </div>
+
+            <div class="promo-boxes">
+              <div class="deal">
+                <div class="deal-label">Nhập</div>
+                <div class="deal-name">BAMOIGARENA</div>
+                <div class="deal-value">
+                  <span class="deal-title">Giảm</span>
+                  <span class="deal-amount">20.000đ</span>
+                </div>
+              </div>
+
+              <div class="deal">
+                <div class="deal-label">Nhập</div>
+                <div class="deal-name">BANTHANNAPTHE</div>
+                <div class="deal-value">
+                  <span class="deal-title">Giảm</span>
+                  <span class="deal-amount small">5.000đ</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="promo-note">
+              Khi lẫn đầu thanh toán bằng ví
+              <strong>ShopPay</strong> tai website napthe.vn
+            </div>
+          </div>
+
+          <div class="promo-figure">
+            <div class="figure-shape"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="game-picker">
+        <h2>Lựa chọn trò chơi</h2>
+
+        <div class="game-grid">
+          {% for game in games %}
+          <div class="game-item">
+            <div class="game-icon" style="background: linear-gradient(135deg, {{ game.bg }}, #f7f7f7);">
+              {{ game.icon }}
+            </div>
+            <div class="game-name">{{ game.name }}</div>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+
+      <section class="feature-banner">
+        <div class="feature-card">
+          <div class="feature-left">
+            <div class="mini-icon">FC</div>
+            <div class="feature-text">
+              <h3>FC Mobile VN</h3>
+              <span>Thành toán an toàn 100%</span>
+            </div>
+          </div>
+
+          <div class="feature-right">
+            <div class="slide-dot"></div>
+            <div class="slide-dot"></div>
+            <div class="slide-dot"></div>
+            <div class="promo-image">
+              <div class="promo-squad"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="login-box">
+        <div class="login-header">
+          <span class="step-number">1</span>
+          <span>Đăng nhập</span>
+        </div>
+
+        <form class="login-form">
+          <div class="input-field">
+            <label>ID người chơi</label>
+            <input type="text" placeholder="" />
+          </div>
+
+          <div class="row">
+            <div class="input-field">
+              <label>Hãy nhập UID của bạn</label>
+              <input type="text" />
+            </div>
+            <button type="button" class="submit-btn">Đăng nhập</button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
